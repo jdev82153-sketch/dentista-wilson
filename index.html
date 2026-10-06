@@ -1,1086 +1,818 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Dentista 24h em Maceió - Dr. Wilson Torres. Atendimento odontológico com cuidado, segurança e excelência."
-    >
+  <meta name="description" content="Dentista 24h em Maceió - Dr. Wilson Torres. Atendimento odontológico, estética dental e urgências.">
 
-    <meta name="theme-color" content="#071A2B">
+  <title>Dentista 24h Maceió | Dr. Wilson Torres</title>
 
-    <title>Dentista 24h Maceió | Dr. Wilson Torres</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         TELA DE BOAS-VINDAS
-         ===================================================== -->
+  <!-- TELA DE BOAS-VINDAS -->
+  <div class="welcome-screen" id="welcomeScreen">
 
-    <div class="welcome-screen" id="welcomeScreen">
+    <div class="welcome-content">
 
-        <div class="welcome-content">
+      <div class="welcome-mark">
+        <span>DT</span>
+      </div>
 
-            <div class="welcome-mark">
-                <span>DT</span>
-            </div>
+      <p class="welcome-mini">DENTISTA 24H • MACEIÓ</p>
 
-            <p class="welcome-small">DENTISTA 24H MACEIÓ</p>
+      <h1 id="welcomeTitle">
+        Olá! Como podemos te chamar?
+      </h1>
 
-            <h1 id="welcomeTitle">
-                Olá! 👋
-            </h1>
+      <p id="welcomeSubtitle">
+        Digite seu nome para personalizar sua experiência.
+      </p>
 
-            <p id="welcomeSubtitle">
-                Como podemos te chamar?
-            </p>
+      <form id="nameForm" class="name-form">
 
-            <form id="nameForm" class="name-form">
+        <input
+          type="text"
+          id="visitorName"
+          placeholder="Seu nome"
+          autocomplete="name"
+          maxlength="40"
+          required
+        >
 
-                <input
-                    type="text"
-                    id="visitorName"
-                    placeholder="Digite seu nome"
-                    autocomplete="name"
-                    maxlength="30"
-                    required
-                >
+        <button type="submit">
+          Continuar
+          <span>→</span>
+        </button>
 
-                <button type="submit">
-                    Continuar
-                    <span>→</span>
-                </button>
+      </form>
 
-            </form>
-
-            <p class="welcome-footer">
-                Dr. Wilson Torres · Maceió - AL
-            </p>
-
-        </div>
+      <small>
+        Seus dados não serão enviados ou compartilhados.
+      </small>
 
     </div>
 
+  </div>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
 
-    <header class="header" id="header">
+  <!-- HEADER -->
+  <header class="header" id="header">
 
-        <div class="container nav">
+    <div class="container nav-container">
 
-            <a href="#inicio" class="brand">
+      <a href="#inicio" class="brand">
+        <span class="brand-symbol">DT</span>
 
-                <img
-                    src="assets/IMG_7004.jpeg"
-                    alt="Logo Dentista 24h Maceió"
-                >
+        <span class="brand-text">
+          <strong>Dr. Wilson Torres</strong>
+          <small>Dentista 24h</small>
+        </span>
+      </a>
 
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#contato">Contato</a>
+
+        <a href="#contato" class="nav-cta">
+          Falar no WhatsApp
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+      <div class="hero-background"></div>
+
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            Atendimento odontológico 24h
+          </div>
+
+          <p class="personal-greeting" id="personalGreeting">
+            Olá!
+          </p>
+
+          <h1>
+            Seu sorriso merece
+            <span>cuidado de verdade.</span>
+          </h1>
+
+          <p class="hero-description">
+            Atendimento odontológico com atenção, segurança
+            e acolhimento para cuidar do seu sorriso quando
+            você mais precisar.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#contato" class="button button-primary">
+              Agendar atendimento
+              <span>→</span>
             </a>
 
+            <a href="#servicos" class="button button-secondary">
+              Conhecer serviços
+            </a>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+          </div>
 
+          <div class="hero-trust">
 
-            <nav class="nav-menu" id="navMenu">
-
-                <a href="#inicio">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#resultados">Resultados</a>
-                <a href="#contato">Contato</a>
-
-                <a
-                    href="https://wa.me/5582981458556"
-                    class="nav-button"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Falar no WhatsApp
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <main>
-
-        <!-- =====================================================
-             HERO
-             ===================================================== -->
-
-        <section class="hero" id="inicio">
-
-            <div class="hero-background"></div>
-
-            <div class="container hero-grid">
-
-                <div class="hero-content reveal">
-
-                    <div class="status-badge">
-                        <span class="status-dot"></span>
-                        Atendimento odontológico 24h
-                    </div>
-
-                    <p class="personal-greeting" id="personalGreeting">
-                        Seja bem-vindo.
-                    </p>
-
-                    <h1>
-                        Seu sorriso merece
-                        <span>cuidado de verdade.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Atendimento odontológico em Maceió com
-                        experiência, tecnologia e cuidado em cada detalhe.
-                    </p>
-
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="https://wa.me/5582981458556"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="button button-primary"
-                        >
-                            <span>Agendar atendimento</span>
-                            <span class="arrow">→</span>
-                        </a>
-
-                        <a
-                            href="#servicos"
-                            class="button button-secondary"
-                        >
-                            Conhecer serviços
-                        </a>
-
-                    </div>
-
-
-                    <div class="hero-trust">
-
-                        <div class="trust-item">
-                            <strong>24h</strong>
-                            <span>Atendimento</span>
-                        </div>
-
-                        <div class="trust-line"></div>
-
-                        <div class="trust-item">
-                            <strong>Maceió</strong>
-                            <span>Alagoas</span>
-                        </div>
-
-                        <div class="trust-line"></div>
-
-                        <div class="trust-item">
-                            <strong>Dr. Wilson</strong>
-                            <span>Atendimento especializado</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- FOTO DO DOUTOR -->
-
-                <div class="hero-image reveal delay-2">
-
-                    <div class="doctor-glow"></div>
-
-                    <div class="doctor-photo-wrapper">
-
-                        <div class="doctor-photo-ring"></div>
-
-                        <div class="doctor-photo">
-
-                            <!-- TROQUE PELO NOME DA FOTO DO DR. WILSON -->
-                            <img
-                                src="assets/doutor.jpeg"
-                                alt="Dr. Wilson Torres"
-                                onerror="this.style.display='none'; this.parentElement.classList.add('photo-placeholder');"
-                            >
-
-                            <div class="photo-fallback">
-                                <span>DT</span>
-                                <small>Foto do Dr. Wilson</small>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="doctor-name-card">
-
-                        <span class="doctor-online"></span>
-
-                        <div>
-                            <strong>Dr. Wilson Torres</strong>
-                            <small>Cirurgião-Dentista</small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-card">
-
-                        <span class="floating-icon">✓</span>
-
-                        <div>
-                            <strong>Atendimento humanizado</strong>
-                            <small>Cuidado em cada etapa</small>
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div>
+              <strong>24h</strong>
+              <span>Atendimento</span>
             </div>
 
-        </section>
-
-
-        <!-- =====================================================
-             TRUST BAR
-             ===================================================== -->
-
-        <section class="trust-bar">
-
-            <div class="container trust-bar-content">
-
-                <span>ODONTOLOGIA</span>
-                <i>✦</i>
-
-                <span>ATENDIMENTO 24H</span>
-                <i>✦</i>
-
-                <span>ESTÉTICA DENTAL</span>
-                <i>✦</i>
-
-                <span>CUIDADO E PRECISÃO</span>
-                <i>✦</i>
-
-                <span>ODONTOLOGIA</span>
-
+            <div>
+              <strong>+</strong>
+              <span>Cuidado</span>
             </div>
 
-        </section>
-
-
-        <!-- =====================================================
-             SOBRE
-             ===================================================== -->
-
-        <section class="section about" id="sobre">
-
-            <div class="container about-grid">
-
-                <div class="about-images reveal">
-
-                    <div class="about-main-image">
-
-                        <img
-                            src="assets/IMG_7005.jpeg"
-                            alt="Facetas em resina composta"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-number">24</span>
-
-                        <span class="experience-text">
-                            horas de<br>
-                            atendimento
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-content reveal delay-1">
-
-                    <span class="section-label">
-                        SOBRE O ATENDIMENTO
-                    </span>
-
-                    <h2>
-                        Cuidado odontológico
-                        <span>pensado para você.</span>
-                    </h2>
-
-                    <p>
-                        Cada sorriso possui uma história, uma necessidade
-                        e um objetivo diferente. O atendimento do Dr. Wilson
-                        Torres busca unir conhecimento, precisão e
-                        atendimento humanizado.
-                    </p>
-
-                    <p>
-                        Seja para uma emergência odontológica ou para cuidar
-                        da estética do seu sorriso, o objetivo é oferecer um
-                        atendimento cuidadoso do primeiro contato ao resultado.
-                    </p>
-
-
-                    <div class="about-features">
-
-                        <div class="feature">
-
-                            <span>01</span>
-
-                            <div>
-                                <strong>Atendimento humanizado</strong>
-
-                                <p>
-                                    Você é ouvido e orientado em cada etapa.
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="feature">
-
-                            <span>02</span>
-
-                            <div>
-                                <strong>Precisão e cuidado</strong>
-
-                                <p>
-                                    Procedimentos realizados com atenção aos detalhes.
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="feature">
-
-                            <span>03</span>
-
-                            <div>
-                                <strong>Atendimento 24 horas</strong>
-
-                                <p>
-                                    Suporte para situações que não podem esperar.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div>
+              <strong>✓</strong>
+              <span>Segurança</span>
             </div>
 
-        </section>
-
-
-        <!-- =====================================================
-             SERVIÇOS
-             ===================================================== -->
-
-        <section class="section services" id="servicos">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">SERVIÇOS</span>
-
-                    <h2>
-                        Soluções para cuidar
-                        <span>do seu sorriso.</span>
-                    </h2>
-
-                    <p>
-                        Um atendimento completo para diferentes necessidades
-                        odontológicas.
-                    </p>
-
-                </div>
-
-
-                <div class="services-grid">
-
-                    <article class="service-card reveal">
-
-                        <span class="service-number">01</span>
-
-                        <div class="service-icon">✦</div>
-
-                        <h3>Facetas em resina</h3>
-
-                        <p>
-                            Procedimento estético para transformar a aparência
-                            do sorriso de forma personalizada.
-                        </p>
-
-                        <a href="#contato">
-                            Saiba mais →
-                        </a>
-
-                    </article>
-
-
-                    <article class="service-card reveal delay-1">
-
-                        <span class="service-number">02</span>
-
-                        <div class="service-icon">◈</div>
-
-                        <h3>Clareamento dental</h3>
-
-                        <p>
-                            Tratamento voltado para um sorriso mais claro,
-                            valorizando a estética e naturalidade.
-                        </p>
-
-                        <a href="#contato">
-                            Saiba mais →
-                        </a>
-
-                    </article>
-
-
-                    <article class="service-card reveal delay-2">
-
-                        <span class="service-number">03</span>
-
-                        <div class="service-icon">+</div>
-
-                        <h3>Urgência odontológica</h3>
-
-                        <p>
-                            Atendimento para situações de dor e emergências
-                            odontológicas que precisam de atenção.
-                        </p>
-
-                        <a href="#contato">
-                            Falar agora →
-                        </a>
-
-                    </article>
-
-
-                    <article class="service-card reveal">
-
-                        <span class="service-number">04</span>
-
-                        <div class="service-icon">◇</div>
-
-                        <h3>Avaliação odontológica</h3>
-
-                        <p>
-                            Avaliação individual para entender suas necessidades
-                            e indicar o melhor caminho.
-                        </p>
-
-                        <a href="#contato">
-                            Agendar →
-                        </a>
-
-                    </article>
-
-
-                    <article class="service-card reveal delay-1">
-
-                        <span class="service-number">05</span>
-
-                        <div class="service-icon">◎</div>
-
-                        <h3>Estética dental</h3>
-
-                        <p>
-                            Procedimentos personalizados para melhorar a
-                            harmonia e aparência do sorriso.
-                        </p>
-
-                        <a href="#contato">
-                            Conhecer →
-                        </a>
-
-                    </article>
-
-
-                    <article class="service-card service-card-dark reveal delay-2">
-
-                        <span class="service-number">06</span>
-
-                        <div class="service-icon">24</div>
-
-                        <h3>Atendimento 24h</h3>
-
-                        <p>
-                            Quando uma situação odontológica não pode esperar,
-                            conte com atendimento.
-                        </p>
-
-                        <a
-                            href="https://wa.me/5582981458556"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Falar no WhatsApp →
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             URGÊNCIA
-             ===================================================== -->
-
-        <section class="emergency">
-
-            <div class="container emergency-content reveal">
-
-                <div>
-
-                    <span class="section-label light">
-                        PRECISA DE ATENDIMENTO?
-                    </span>
-
-                    <h2>
-                        A dor não precisa
-                        <span>esperar.</span>
-                    </h2>
-
-                    <p>
-                        Se você está passando por uma emergência odontológica,
-                        entre em contato e receba orientação sobre o atendimento.
-                    </p>
-
-                </div>
-
-                <a
-                    href="https://wa.me/5582981458556"
-                    class="button button-light"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Falar pelo WhatsApp
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             RESULTADOS
-             ===================================================== -->
-
-        <section class="section results" id="resultados">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">RESULTADOS</span>
-
-                    <h2>
-                        Transformações que
-                        <span>valorizam o sorriso.</span>
-                    </h2>
-
-                    <p>
-                        Confira alguns dos trabalhos e procedimentos realizados.
-                    </p>
-
-                </div>
-
-
-                <div class="gallery">
-
-                    <div class="gallery-item gallery-large reveal">
-
-                        <img
-                            src="assets/IMG_7008.jpeg"
-                            alt="Facetas em resina"
-                            loading="lazy"
-                        >
-
-                        <div class="gallery-overlay">
-
-                            <span>Estética dental</span>
-
-                            <strong>
-                                Facetas em resina
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="gallery-item reveal delay-1">
-
-                        <img
-                            src="assets/IMG_7010.jpeg"
-                            alt="Clareamento dental"
-                            loading="lazy"
-                        >
-
-                        <div class="gallery-overlay">
-
-                            <span>Estética dental</span>
-
-                            <strong>
-                                Clareamento
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="gallery-item reveal delay-2">
-
-                        <img
-                            src="assets/IMG_7005.jpeg"
-                            alt="Facetas em resina composta"
-                            loading="lazy"
-                        >
-
-                        <div class="gallery-overlay">
-
-                            <span>Estética dental</span>
-
-                            <strong>
-                                Facetas em resina composta
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             DIFERENCIAIS
-             ===================================================== -->
-
-        <section class="section differences">
-
-            <div class="container">
-
-                <div class="difference-grid">
-
-                    <div class="difference-intro reveal">
-
-                        <span class="section-label">
-                            POR QUE ESCOLHER?
-                        </span>
-
-                        <h2>
-                            Mais do que um
-                            <span>tratamento.</span>
-                        </h2>
-
-                        <p>
-                            Um atendimento pensado para que você se sinta
-                            seguro, confortável e bem orientado.
-                        </p>
-
-                    </div>
-
-
-                    <div class="difference-list">
-
-                        <div class="difference-item reveal">
-
-                            <span>01</span>
-
-                            <div>
-
-                                <h3>
-                                    Atendimento humanizado
-                                </h3>
-
-                                <p>
-                                    Atenção às suas necessidades e objetivos.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="difference-item reveal delay-1">
-
-                            <span>02</span>
-
-                            <div>
-
-                                <h3>
-                                    Foco nos detalhes
-                                </h3>
-
-                                <p>
-                                    Cada procedimento é pensado de forma individual.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="difference-item reveal delay-2">
-
-                            <span>03</span>
-
-                            <div>
-
-                                <h3>
-                                    Atendimento 24 horas
-                                </h3>
-
-                                <p>
-                                    Mais tranquilidade quando você mais precisa.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="difference-item reveal delay-3">
-
-                            <span>04</span>
-
-                            <div>
-
-                                <h3>
-                                    Experiência personalizada
-                                </h3>
-
-                                <p>
-                                    Seu tratamento de acordo com suas necessidades.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             FAQ
-             ===================================================== -->
-
-        <section class="section faq">
-
-            <div class="container faq-grid">
-
-                <div class="faq-title reveal">
-
-                    <span class="section-label">
-                        DÚVIDAS
-                    </span>
-
-                    <h2>
-                        Perguntas
-                        <span>frequentes.</span>
-                    </h2>
-
-                    <p>
-                        Confira algumas dúvidas comuns sobre o atendimento.
-                    </p>
-
-                </div>
-
-
-                <div class="faq-list reveal delay-1">
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            O atendimento funciona 24 horas?
-
-                            <span>+</span>
-
-                        </button>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                Entre em contato pelo WhatsApp para confirmar
-                                o atendimento e receber as orientações.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Atende casos de urgência?
-
-                            <span>+</span>
-
-                        </button>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                Sim. Entre em contato para explicar sua situação
-                                e receber orientação sobre o atendimento.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Como posso agendar?
-
-                            <span>+</span>
-
-                        </button>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                Você pode entrar em contato pelo WhatsApp através
-                                do botão disponível nesta página.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Onde fica a clínica?
-
-                            <span>+</span>
-
-                        </button>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                A clínica está localizada em Maceió, Alagoas.
-                                Entre em contato para receber a localização.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CONTATO
-             ===================================================== -->
-
-        <section class="contact" id="contato">
-
-            <div class="container contact-box reveal">
-
-                <div class="contact-content">
-
-                    <span class="section-label light">
-                        VAMOS CONVERSAR?
-                    </span>
-
-                    <h2>
-                        Seu próximo sorriso
-                        <span>começa aqui.</span>
-                    </h2>
-
-                    <p>
-                        Entre em contato com o Dr. Wilson Torres e descubra
-                        como podemos cuidar do seu sorriso.
-                    </p>
-
-                    <a
-                        href="https://wa.me/5582981458556"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button button-light"
-                    >
-                        Falar no WhatsApp
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-                <div class="contact-decoration">
-                    <span>DT</span>
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer class="footer">
-
-        <div class="container footer-grid">
-
-            <div class="footer-brand">
-
-                <img
-                    src="assets/IMG_7004.jpeg"
-                    alt="Dentista 24h Maceió"
-                >
-
-                <p>
-                    Atendimento odontológico com cuidado,
-                    precisão e humanização.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Navegação</h4>
-
-                <a href="#inicio">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#resultados">Resultados</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Contato</h4>
-
-                <a
-                    href="https://wa.me/5582981458556"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                </a>
-
-                <a href="#contato">
-                    Atendimento
-                </a>
-
-                <a href="#contato">
-                    Maceió - AL
-                </a>
-
-            </div>
+          </div>
 
         </div>
 
 
-        <div class="container footer-bottom">
+        <div class="doctor-area reveal">
+
+          <div class="doctor-glow"></div>
+
+          <div class="doctor-card">
+
+            <div class="doctor-photo">
+
+              <img
+                src="assets/doutor.jpeg"
+                alt="Dr. Wilson Torres"
+                onerror="this.style.display='none'; document.querySelector('.doctor-placeholder').style.display='flex';"
+              >
+
+              <div class="doctor-placeholder">
+                <span>DT</span>
+              </div>
+
+            </div>
+
+            <div class="doctor-info">
+
+              <span>Atendimento odontológico</span>
+
+              <h2>Dr. Wilson Torres</h2>
+
+              <p>Dentista • Maceió</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BARRA DE CONFIANÇA -->
+    <section class="trust-section">
+
+      <div class="container trust-grid">
+
+        <div class="trust-item reveal">
+          <span class="trust-icon">◷</span>
+
+          <div>
+            <strong>Atendimento 24h</strong>
+            <p>Quando você precisar</p>
+          </div>
+        </div>
+
+        <div class="trust-item reveal">
+          <span class="trust-icon">✦</span>
+
+          <div>
+            <strong>Cuidado personalizado</strong>
+            <p>Atendimento humanizado</p>
+          </div>
+        </div>
+
+        <div class="trust-item reveal">
+          <span class="trust-icon">✓</span>
+
+          <div>
+            <strong>Foco no seu sorriso</strong>
+            <p>Odontologia com atenção</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+    <section class="section about" id="sobre">
+
+      <div class="container two-columns">
+
+        <div class="about-image reveal">
+
+          <img
+            src="assets/IMG_7005.jpeg"
+            alt="Resultado odontológico"
+          >
+
+          <div class="image-tag">
+            <span>✦</span>
+            Cuidado em cada detalhe
+          </div>
+
+        </div>
+
+
+        <div class="about-content reveal">
+
+          <span class="section-label">SOBRE O ATENDIMENTO</span>
+
+          <h2>
+            Mais que cuidar dos dentes,
+            <span>cuidar de você.</span>
+          </h2>
+
+          <p>
+            Cada atendimento começa entendendo o que você precisa.
+            O objetivo é oferecer uma experiência tranquila,
+            profissional e focada no seu bem-estar.
+          </p>
+
+          <p>
+            Seja para uma emergência odontológica ou para cuidar
+            da estética do seu sorriso, você encontra atendimento
+            pensado para suas necessidades.
+          </p>
+
+          <a href="#contato" class="text-link">
+            Quero conhecer o atendimento →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVIÇOS -->
+    <section class="section services" id="servicos">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">SERVIÇOS</span>
+
+          <h2>
+            Cuidados para
+            <span>o seu sorriso.</span>
+          </h2>
+
+          <p>
+            Conheça alguns dos atendimentos disponíveis.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+
+            <div class="service-number">01</div>
+
+            <div class="service-icon">✦</div>
+
+            <h3>Facetas em resina</h3>
 
             <p>
-                © <span id="currentYear"></span>
-                Dentista 24h Maceió - Dr. Wilson Torres.
-                Todos os direitos reservados.
+              Procedimento estético para transformar
+              o visual do sorriso.
             </p>
 
-            <span>
-                Desenvolvido com cuidado.
-            </span>
+            <a href="#contato">Saiba mais →</a>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">02</div>
+
+            <div class="service-icon">◇</div>
+
+            <h3>Clareamento dental</h3>
+
+            <p>
+              Tratamento voltado para deixar o sorriso
+              mais claro e iluminado.
+            </p>
+
+            <a href="#contato">Saiba mais →</a>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">03</div>
+
+            <div class="service-icon">+</div>
+
+            <h3>Urgência odontológica</h3>
+
+            <p>
+              Atendimento para situações que precisam
+              de atenção odontológica.
+            </p>
+
+            <a href="#contato">Saiba mais →</a>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">04</div>
+
+            <div class="service-icon">✓</div>
+
+            <h3>Avaliação</h3>
+
+            <p>
+              Avaliação para entender suas necessidades
+              e indicar o melhor caminho.
+            </p>
+
+            <a href="#contato">Saiba mais →</a>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">05</div>
+
+            <div class="service-icon">◇</div>
+
+            <h3>Odontologia estética</h3>
+
+            <p>
+              Cuidados pensados para valorizar
+              a aparência do seu sorriso.
+            </p>
+
+            <a href="#contato">Saiba mais →</a>
+
+          </article>
+
+
+          <article class="service-card service-highlight reveal">
+
+            <div class="service-number">06</div>
+
+            <div class="service-icon">24</div>
+
+            <h3>Atendimento 24h</h3>
+
+            <p>
+              Para você ter onde buscar ajuda
+              quando precisar.
+            </p>
+
+            <a href="#contato">Falar com a clínica →</a>
+
+          </article>
 
         </div>
 
-    </footer>
+      </div>
+
+    </section>
 
 
-    <!-- =====================================================
-         WHATSAPP
-         ===================================================== -->
+    <!-- CTA EMERGÊNCIA -->
+    <section class="emergency-section">
 
-    <a
-        href="https://wa.me/5582981458556"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-float"
-        aria-label="Falar no WhatsApp"
-    >
-        <span>☏</span>
-    </a>
+      <div class="container">
+
+        <div class="emergency-box reveal">
+
+          <div>
+
+            <span class="section-label light">
+              PRECISA DE ATENDIMENTO?
+            </span>
+
+            <h2>
+              Não deixe uma dor
+              <span>esperar.</span>
+            </h2>
+
+            <p>
+              Entre em contato e veja como podemos
+              ajudar você.
+            </p>
+
+          </div>
+
+          <a href="#contato" class="button button-white">
+            Entrar em contato →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
-    <script src="script.js"></script>
+    <!-- RESULTADOS -->
+    <section class="section results" id="resultados">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">RESULTADOS</span>
+
+          <h2>
+            Alguns trabalhos
+            <span>realizados.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="gallery">
+
+          <div class="gallery-item gallery-large reveal">
+
+            <img
+              src="assets/IMG_7008.jpeg"
+              alt="Resultado de facetas em resina"
+            >
+
+            <div class="gallery-caption">
+              <strong>Facetas em resina</strong>
+              <span>Resultado odontológico</span>
+            </div>
+
+          </div>
+
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="assets/IMG_7010.jpeg"
+              alt="Clareamento dental"
+            >
+
+            <div class="gallery-caption">
+              <strong>Clareamento</strong>
+              <span>Estética dental</span>
+            </div>
+
+          </div>
+
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="assets/IMG_7005.jpeg"
+              alt="Facetas em resina composta"
+            >
+
+            <div class="gallery-caption">
+              <strong>Facetas</strong>
+              <span>Resina composta</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIFERENCIAIS -->
+    <section class="section differences">
+
+      <div class="container">
+
+        <div class="section-heading centered reveal">
+
+          <span class="section-label">DIFERENCIAIS</span>
+
+          <h2>
+            Por que escolher
+            <span>este atendimento?</span>
+          </h2>
+
+        </div>
+
+
+        <div class="difference-grid">
+
+          <div class="difference reveal">
+
+            <span>01</span>
+
+            <div>
+              <h3>Atendimento humanizado</h3>
+
+              <p>
+                Você é ouvido e recebe atenção
+                durante todo o atendimento.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="difference reveal">
+
+            <span>02</span>
+
+            <div>
+              <h3>Atendimento 24 horas</h3>
+
+              <p>
+                Uma opção para situações que
+                não podem esperar.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="difference reveal">
+
+            <span>03</span>
+
+            <div>
+              <h3>Foco no resultado</h3>
+
+              <p>
+                Cada tratamento busca unir
+                cuidado e qualidade.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="difference reveal">
+
+            <span>04</span>
+
+            <div>
+              <h3>Experiência personalizada</h3>
+
+              <p>
+                O atendimento é direcionado
+                para cada necessidade.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section faq">
+
+      <div class="container faq-container">
+
+        <div class="section-heading centered reveal">
+
+          <span class="section-label">DÚVIDAS</span>
+
+          <h2>
+            Perguntas
+            <span>frequentes.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+              O atendimento funciona 24 horas?
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                O atendimento é voltado também para situações
+                odontológicas que precisam de atenção fora
+                do horário convencional. Entre em contato
+                para verificar a disponibilidade.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+              Como posso agendar um atendimento?
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Basta entrar em contato pelo WhatsApp
+                para consultar horários e disponibilidade.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+              Posso perguntar sobre um procedimento?
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Sim. Você pode enviar sua dúvida pelo WhatsApp
+                e receber orientações sobre o atendimento.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question">
+              Como saber qual tratamento é indicado?
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                A avaliação odontológica permite entender
+                suas necessidades e indicar as possibilidades
+                de tratamento.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTATO -->
+    <section class="contact-section" id="contato">
+
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <div class="contact-content">
+
+            <span class="section-label light">
+              FALE CONOSCO
+            </span>
+
+            <h2>
+              Pronto para cuidar
+              <span>do seu sorriso?</span>
+            </h2>
+
+            <p>
+              Entre em contato para consultar informações,
+              horários e disponibilidade.
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://wa.me/SEU_NUMERO_AQUI"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-button"
+          >
+            <span>◉</span>
+            Falar pelo WhatsApp
+            <strong>→</strong>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>Dr. Wilson Torres</strong>
+
+        <p>
+          Dentista 24h • Maceió
+        </p>
+
+      </div>
+
+      <p>
+        © <span id="currentYear"></span>
+        Dr. Wilson Torres. Todos os direitos reservados.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a
+    href="https://wa.me/SEU_NUMERO_AQUI"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-whatsapp"
+    aria-label="Falar pelo WhatsApp"
+  >
+    <span>◉</span>
+  </a>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
