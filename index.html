@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
@@ -27,22 +26,72 @@
 
 <body>
 
-    <!-- LOADING / INTRO -->
-    <div class="page-loader">
-        <div class="loader-logo">DT</div>
+    <!-- =====================================================
+         TELA DE BOAS-VINDAS
+         ===================================================== -->
+
+    <div class="welcome-screen" id="welcomeScreen">
+
+        <div class="welcome-content">
+
+            <div class="welcome-mark">
+                <span>DT</span>
+            </div>
+
+            <p class="welcome-small">DENTISTA 24H MACEIÓ</p>
+
+            <h1 id="welcomeTitle">
+                Olá! 👋
+            </h1>
+
+            <p id="welcomeSubtitle">
+                Como podemos te chamar?
+            </p>
+
+            <form id="nameForm" class="name-form">
+
+                <input
+                    type="text"
+                    id="visitorName"
+                    placeholder="Digite seu nome"
+                    autocomplete="name"
+                    maxlength="30"
+                    required
+                >
+
+                <button type="submit">
+                    Continuar
+                    <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="welcome-footer">
+                Dr. Wilson Torres · Maceió - AL
+            </p>
+
+        </div>
+
     </div>
 
-    <!-- HEADER -->
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
     <header class="header" id="header">
 
         <div class="container nav">
 
             <a href="#inicio" class="brand">
+
                 <img
                     src="assets/IMG_7004.jpeg"
                     alt="Logo Dentista 24h Maceió"
                 >
+
             </a>
+
 
             <button
                 class="menu-toggle"
@@ -55,7 +104,9 @@
                 <span></span>
             </button>
 
+
             <nav class="nav-menu" id="navMenu">
+
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#servicos">Serviços</a>
@@ -70,6 +121,7 @@
                 >
                     Falar no WhatsApp
                 </a>
+
             </nav>
 
         </div>
@@ -79,7 +131,10 @@
 
     <main>
 
-        <!-- HERO -->
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+
         <section class="hero" id="inicio">
 
             <div class="hero-background"></div>
@@ -93,6 +148,10 @@
                         Atendimento odontológico 24h
                     </div>
 
+                    <p class="personal-greeting" id="personalGreeting">
+                        Seja bem-vindo.
+                    </p>
+
                     <h1>
                         Seu sorriso merece
                         <span>cuidado de verdade.</span>
@@ -102,6 +161,7 @@
                         Atendimento odontológico em Maceió com
                         experiência, tecnologia e cuidado em cada detalhe.
                     </p>
+
 
                     <div class="hero-actions">
 
@@ -115,11 +175,15 @@
                             <span class="arrow">→</span>
                         </a>
 
-                        <a href="#servicos" class="button button-secondary">
+                        <a
+                            href="#servicos"
+                            class="button button-secondary"
+                        >
                             Conhecer serviços
                         </a>
 
                     </div>
+
 
                     <div class="hero-trust">
 
@@ -147,32 +211,56 @@
                 </div>
 
 
+                <!-- FOTO DO DOUTOR -->
+
                 <div class="hero-image reveal delay-2">
 
-                    <div class="image-glow"></div>
+                    <div class="doctor-glow"></div>
 
-                    <div class="hero-card">
+                    <div class="doctor-photo-wrapper">
 
-                        <div class="hero-card-top">
-                            <span>DR. WILSON TORRES</span>
-                            <span class="online-dot"></span>
-                        </div>
+                        <div class="doctor-photo-ring"></div>
 
-                        <div class="doctor-placeholder">
-                            <div class="doctor-icon">✦</div>
-                            <p>Imagem profissional</p>
-                            <small>Adicione a foto do Dr. Wilson aqui</small>
+                        <div class="doctor-photo">
+
+                            <!-- TROQUE PELO NOME DA FOTO DO DR. WILSON -->
+                            <img
+                                src="assets/doutor.jpeg"
+                                alt="Dr. Wilson Torres"
+                                onerror="this.style.display='none'; this.parentElement.classList.add('photo-placeholder');"
+                            >
+
+                            <div class="photo-fallback">
+                                <span>DT</span>
+                                <small>Foto do Dr. Wilson</small>
+                            </div>
+
                         </div>
 
                     </div>
 
+
+                    <div class="doctor-name-card">
+
+                        <span class="doctor-online"></span>
+
+                        <div>
+                            <strong>Dr. Wilson Torres</strong>
+                            <small>Cirurgião-Dentista</small>
+                        </div>
+
+                    </div>
+
+
                     <div class="floating-card">
+
                         <span class="floating-icon">✓</span>
 
                         <div>
                             <strong>Atendimento humanizado</strong>
                             <small>Cuidado em cada etapa</small>
                         </div>
+
                     </div>
 
                 </div>
@@ -182,7 +270,10 @@
         </section>
 
 
-        <!-- MARQUEE / TRUST -->
+        <!-- =====================================================
+             TRUST BAR
+             ===================================================== -->
+
         <section class="trust-bar">
 
             <div class="container trust-bar-content">
@@ -206,7 +297,10 @@
         </section>
 
 
-        <!-- SOBRE -->
+        <!-- =====================================================
+             SOBRE
+             ===================================================== -->
+
         <section class="section about" id="sobre">
 
             <div class="container about-grid">
@@ -214,19 +308,24 @@
                 <div class="about-images reveal">
 
                     <div class="about-main-image">
+
                         <img
                             src="assets/IMG_7005.jpeg"
-                            alt="Tratamento odontológico com facetas em resina composta"
+                            alt="Facetas em resina composta"
                             loading="lazy"
                         >
+
                     </div>
 
                     <div class="experience-card">
+
                         <span class="experience-number">24</span>
+
                         <span class="experience-text">
                             horas de<br>
                             atendimento
                         </span>
+
                     </div>
 
                 </div>
@@ -234,7 +333,9 @@
 
                 <div class="about-content reveal delay-1">
 
-                    <span class="section-label">SOBRE O ATENDIMENTO</span>
+                    <span class="section-label">
+                        SOBRE O ATENDIMENTO
+                    </span>
 
                     <h2>
                         Cuidado odontológico
@@ -242,11 +343,10 @@
                     </h2>
 
                     <p>
-                        Cada sorriso possui uma história, uma necessidade e
-                        um objetivo diferente. O atendimento do Dr. Wilson
+                        Cada sorriso possui uma história, uma necessidade
+                        e um objetivo diferente. O atendimento do Dr. Wilson
                         Torres busca unir conhecimento, precisão e
-                        atendimento humanizado para proporcionar uma
-                        experiência tranquila e segura.
+                        atendimento humanizado.
                     </p>
 
                     <p>
@@ -255,30 +355,51 @@
                         atendimento cuidadoso do primeiro contato ao resultado.
                     </p>
 
+
                     <div class="about-features">
 
                         <div class="feature">
+
                             <span>01</span>
+
                             <div>
                                 <strong>Atendimento humanizado</strong>
-                                <p>Você é ouvido e orientado em cada etapa.</p>
+
+                                <p>
+                                    Você é ouvido e orientado em cada etapa.
+                                </p>
                             </div>
+
                         </div>
 
+
                         <div class="feature">
+
                             <span>02</span>
+
                             <div>
                                 <strong>Precisão e cuidado</strong>
-                                <p>Procedimentos realizados com atenção aos detalhes.</p>
+
+                                <p>
+                                    Procedimentos realizados com atenção aos detalhes.
+                                </p>
                             </div>
+
                         </div>
 
+
                         <div class="feature">
+
                             <span>03</span>
+
                             <div>
                                 <strong>Atendimento 24 horas</strong>
-                                <p>Suporte para situações que não podem esperar.</p>
+
+                                <p>
+                                    Suporte para situações que não podem esperar.
+                                </p>
                             </div>
+
                         </div>
 
                     </div>
@@ -290,7 +411,10 @@
         </section>
 
 
-        <!-- SERVIÇOS -->
+        <!-- =====================================================
+             SERVIÇOS
+             ===================================================== -->
+
         <section class="section services" id="servicos">
 
             <div class="container">
@@ -327,7 +451,9 @@
                             do sorriso de forma personalizada.
                         </p>
 
-                        <a href="#contato">Saiba mais →</a>
+                        <a href="#contato">
+                            Saiba mais →
+                        </a>
 
                     </article>
 
@@ -345,7 +471,9 @@
                             valorizando a estética e naturalidade.
                         </p>
 
-                        <a href="#contato">Saiba mais →</a>
+                        <a href="#contato">
+                            Saiba mais →
+                        </a>
 
                     </article>
 
@@ -363,7 +491,9 @@
                             odontológicas que precisam de atenção.
                         </p>
 
-                        <a href="#contato">Falar agora →</a>
+                        <a href="#contato">
+                            Falar agora →
+                        </a>
 
                     </article>
 
@@ -381,7 +511,9 @@
                             e indicar o melhor caminho.
                         </p>
 
-                        <a href="#contato">Agendar →</a>
+                        <a href="#contato">
+                            Agendar →
+                        </a>
 
                     </article>
 
@@ -399,7 +531,9 @@
                             harmonia e aparência do sorriso.
                         </p>
 
-                        <a href="#contato">Conhecer →</a>
+                        <a href="#contato">
+                            Conhecer →
+                        </a>
 
                     </article>
 
@@ -434,7 +568,10 @@
         </section>
 
 
-        <!-- URGÊNCIA -->
+        <!-- =====================================================
+             URGÊNCIA
+             ===================================================== -->
+
         <section class="emergency">
 
             <div class="container emergency-content reveal">
@@ -472,7 +609,10 @@
         </section>
 
 
-        <!-- RESULTADOS -->
+        <!-- =====================================================
+             RESULTADOS
+             ===================================================== -->
+
         <section class="section results" id="resultados">
 
             <div class="container">
@@ -504,8 +644,13 @@
                         >
 
                         <div class="gallery-overlay">
+
                             <span>Estética dental</span>
-                            <strong>Facetas em resina</strong>
+
+                            <strong>
+                                Facetas em resina
+                            </strong>
+
                         </div>
 
                     </div>
@@ -520,8 +665,13 @@
                         >
 
                         <div class="gallery-overlay">
+
                             <span>Estética dental</span>
-                            <strong>Clareamento</strong>
+
+                            <strong>
+                                Clareamento
+                            </strong>
+
                         </div>
 
                     </div>
@@ -536,8 +686,13 @@
                         >
 
                         <div class="gallery-overlay">
+
                             <span>Estética dental</span>
-                            <strong>Facetas em resina composta</strong>
+
+                            <strong>
+                                Facetas em resina composta
+                            </strong>
+
                         </div>
 
                     </div>
@@ -549,7 +704,10 @@
         </section>
 
 
-        <!-- DIFERENCIAIS -->
+        <!-- =====================================================
+             DIFERENCIAIS
+             ===================================================== -->
+
         <section class="section differences">
 
             <div class="container">
@@ -558,7 +716,9 @@
 
                     <div class="difference-intro reveal">
 
-                        <span class="section-label">POR QUE ESCOLHER?</span>
+                        <span class="section-label">
+                            POR QUE ESCOLHER?
+                        </span>
 
                         <h2>
                             Mais do que um
@@ -580,10 +740,15 @@
                             <span>01</span>
 
                             <div>
-                                <h3>Atendimento humanizado</h3>
+
+                                <h3>
+                                    Atendimento humanizado
+                                </h3>
+
                                 <p>
                                     Atenção às suas necessidades e objetivos.
                                 </p>
+
                             </div>
 
                         </div>
@@ -594,10 +759,15 @@
                             <span>02</span>
 
                             <div>
-                                <h3>Foco nos detalhes</h3>
+
+                                <h3>
+                                    Foco nos detalhes
+                                </h3>
+
                                 <p>
                                     Cada procedimento é pensado de forma individual.
                                 </p>
+
                             </div>
 
                         </div>
@@ -608,10 +778,15 @@
                             <span>03</span>
 
                             <div>
-                                <h3>Atendimento 24 horas</h3>
+
+                                <h3>
+                                    Atendimento 24 horas
+                                </h3>
+
                                 <p>
                                     Mais tranquilidade quando você mais precisa.
                                 </p>
+
                             </div>
 
                         </div>
@@ -622,10 +797,15 @@
                             <span>04</span>
 
                             <div>
-                                <h3>Experiência personalizada</h3>
+
+                                <h3>
+                                    Experiência personalizada
+                                </h3>
+
                                 <p>
                                     Seu tratamento de acordo com suas necessidades.
                                 </p>
+
                             </div>
 
                         </div>
@@ -639,14 +819,19 @@
         </section>
 
 
-        <!-- FAQ -->
+        <!-- =====================================================
+             FAQ
+             ===================================================== -->
+
         <section class="section faq">
 
             <div class="container faq-grid">
 
                 <div class="faq-title reveal">
 
-                    <span class="section-label">DÚVIDAS</span>
+                    <span class="section-label">
+                        DÚVIDAS
+                    </span>
 
                     <h2>
                         Perguntas
@@ -665,15 +850,20 @@
                     <div class="faq-item">
 
                         <button class="faq-question">
+
                             O atendimento funciona 24 horas?
+
                             <span>+</span>
+
                         </button>
 
                         <div class="faq-answer">
+
                             <p>
                                 Entre em contato pelo WhatsApp para confirmar
                                 o atendimento e receber as orientações.
                             </p>
+
                         </div>
 
                     </div>
@@ -682,15 +872,20 @@
                     <div class="faq-item">
 
                         <button class="faq-question">
+
                             Atende casos de urgência?
+
                             <span>+</span>
+
                         </button>
 
                         <div class="faq-answer">
+
                             <p>
                                 Sim. Entre em contato para explicar sua situação
                                 e receber orientação sobre o atendimento.
                             </p>
+
                         </div>
 
                     </div>
@@ -699,15 +894,20 @@
                     <div class="faq-item">
 
                         <button class="faq-question">
+
                             Como posso agendar?
+
                             <span>+</span>
+
                         </button>
 
                         <div class="faq-answer">
+
                             <p>
                                 Você pode entrar em contato pelo WhatsApp através
                                 do botão disponível nesta página.
                             </p>
+
                         </div>
 
                     </div>
@@ -716,15 +916,20 @@
                     <div class="faq-item">
 
                         <button class="faq-question">
+
                             Onde fica a clínica?
+
                             <span>+</span>
+
                         </button>
 
                         <div class="faq-answer">
+
                             <p>
                                 A clínica está localizada em Maceió, Alagoas.
                                 Entre em contato para receber a localização.
                             </p>
+
                         </div>
 
                     </div>
@@ -736,7 +941,10 @@
         </section>
 
 
-        <!-- CONTATO -->
+        <!-- =====================================================
+             CONTATO
+             ===================================================== -->
+
         <section class="contact" id="contato">
 
             <div class="container contact-box reveal">
@@ -780,7 +988,10 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
     <footer class="footer">
 
         <div class="container footer-grid">
@@ -854,7 +1065,10 @@
     </footer>
 
 
-    <!-- WHATSAPP FLOAT -->
+    <!-- =====================================================
+         WHATSAPP
+         ===================================================== -->
+
     <a
         href="https://wa.me/5582981458556"
         target="_blank"
