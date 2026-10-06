@@ -1,437 +1,267 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       BOAS-VINDAS / NOME DO VISITANTE
-       ===================================================== */
+  /* =========================================
+     PERSONALIZAÇÃO DO NOME
+  ========================================= */
 
-    const welcomeScreen =
-        document.getElementById("welcomeScreen");
+  const welcomeScreen = document.getElementById("welcomeScreen");
+  const nameForm = document.getElementById("nameForm");
+  const visitorName = document.getElementById("visitorName");
+  const personalGreeting = document.getElementById("personalGreeting");
 
-    const nameForm =
-        document.getElementById("nameForm");
-
-    const visitorName =
-        document.getElementById("visitorName");
-
-    const welcomeTitle =
-        document.getElementById("welcomeTitle");
-
-    const welcomeSubtitle =
-        document.getElementById("welcomeSubtitle");
-
-    const personalGreeting =
-        document.getElementById("personalGreeting");
+  const savedName = localStorage.getItem("dentistaVisitorName");
 
 
-    /*
-     * Se a pessoa já visitou o site antes,
-     * usamos o nome salvo para não pedir novamente.
-     */
+  function setGreeting(name) {
 
-    const savedName =
-        localStorage.getItem("dentistaVisitorName");
+    const cleanName = name.trim();
 
-
-    const finishWelcome = (name) => {
-
-        const cleanName =
-            name.trim()
-                .replace(/\s+/g, " ")
-                .slice(0, 30);
-
-
-        if (!cleanName) {
-            return;
-        }
-
-
-        localStorage.setItem(
-            "dentistaVisitorName",
-            cleanName
-        );
-
-
-        welcomeTitle.textContent =
-            `Olá, ${cleanName}! 👋`;
-
-        welcomeSubtitle.textContent =
-            "Seja muito bem-vindo(a).";
-
-
-        if (personalGreeting) {
-
-            personalGreeting.textContent =
-                `Olá, ${cleanName}. Seja bem-vindo(a).`;
-
-        }
-
-
-        setTimeout(() => {
-
-            welcomeScreen.classList.add("hidden");
-
-        }, 900);
-
-    };
-
-
-    /*
-     * Caso já exista nome salvo,
-     * mostramos uma saudação rápida.
-     */
-
-    if (savedName) {
-
-        const cleanSavedName =
-            savedName.trim();
-
-
-        welcomeTitle.textContent =
-            `Olá, ${cleanSavedName}! 👋`;
-
-        welcomeSubtitle.textContent =
-            "Que bom ter você por aqui.";
-
-        personalGreeting.textContent =
-            `Olá, ${cleanSavedName}. Seja bem-vindo(a).`;
-
-
-        setTimeout(() => {
-
-            welcomeScreen.classList.add("hidden");
-
-        }, 1200);
-
+    if (!cleanName) {
+      personalGreeting.textContent = "Olá!";
+      return;
     }
 
+    const formattedName =
+      cleanName.charAt(0).toUpperCase() +
+      cleanName.slice(1).toLowerCase();
 
-    if (nameForm) {
+    personalGreeting.textContent = `Olá, ${formattedName}!`;
+  }
 
-        nameForm.addEventListener(
-            "submit",
-            (event) => {
 
-                event.preventDefault();
+  if (savedName) {
 
-                finishWelcome(
-                    visitorName.value
-                );
+    setGreeting(savedName);
 
-            }
-        );
+    setTimeout(() => {
+      welcomeScreen.classList.add("hide");
+    }, 500);
 
+  } else {
+
+    setTimeout(() => {
+      visitorName.focus();
+    }, 700);
+
+  }
+
+
+  nameForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const name = visitorName.value.trim();
+
+    if (!name) {
+      visitorName.focus();
+      return;
     }
 
+    localStorage.setItem("dentistaVisitorName", name);
 
-    /* =====================================================
-       HEADER AO ROLAR
-       ===================================================== */
+    setGreeting(name);
 
-    const header =
-        document.getElementById("header");
+    welcomeScreen.classList.add("hide");
 
-
-    const handleHeader = () => {
-
-        if (window.scrollY > 50) {
-
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
-
-    };
+  });
 
 
-    window.addEventListener(
-        "scroll",
-        handleHeader
-    );
+  /* =========================================
+     HEADER AO ROLAR
+  ========================================= */
 
+  const header = document.getElementById("header");
 
-    handleHeader();
+  function updateHeader() {
 
-
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
-
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const navMenu =
-        document.getElementById("navMenu");
-
-
-    if (menuToggle && navMenu) {
-
-        menuToggle.addEventListener(
-            "click",
-            () => {
-
-                const active =
-                    navMenu.classList.toggle("active");
-
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    active ? "true" : "false"
-                );
-
-            }
-        );
-
-
-        const navLinks =
-            navMenu.querySelectorAll("a");
-
-
-        navLinks.forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    navMenu.classList.remove(
-                        "active"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-            );
-
-        });
-
+    if (window.scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
     }
 
+  }
 
-    /* =====================================================
-       FADE-IN / REVEAL
-       ===================================================== */
+  window.addEventListener("scroll", updateHeader);
 
-    const revealElements =
-        document.querySelectorAll(".reveal");
+  updateHeader();
 
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
+  /* =========================================
+     MENU MOBILE
+  ========================================= */
 
-                entries.forEach(entry => {
+  const menuButton = document.getElementById("menuButton");
+  const nav = document.getElementById("nav");
 
-                    if (entry.isIntersecting) {
+  menuButton.addEventListener("click", () => {
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
+    nav.classList.toggle("active");
 
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
+  });
 
 
-    revealElements.forEach(element => {
+  document.querySelectorAll(".nav a").forEach((link) => {
 
-        revealObserver.observe(element);
+    link.addEventListener("click", () => {
+
+      nav.classList.remove("active");
 
     });
 
-
-    /* =====================================================
-       FAQ
-       ===================================================== */
-
-    const faqItems =
-        document.querySelectorAll(".faq-item");
+  });
 
 
-    faqItems.forEach(item => {
+  /* =========================================
+     ANIMAÇÕES REVEAL
+  ========================================= */
 
-        const question =
-            item.querySelector(".faq-question");
-
-        const answer =
-            item.querySelector(".faq-answer");
-
-
-        question.addEventListener(
-            "click",
-            () => {
-
-                const isActive =
-                    item.classList.contains("active");
+  const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-                faqItems.forEach(otherItem => {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
 
-                    otherItem.classList.remove(
-                        "active"
-                    );
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
 
 
-                    const otherAnswer =
-                        otherItem.querySelector(
-                            ".faq-answer"
-                        );
+  revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+  });
 
 
-                    otherAnswer.style.maxHeight =
-                        null;
+  /* =========================================
+     FAQ
+  ========================================= */
 
-                });
+  const faqItems =
+    document.querySelectorAll(".faq-item");
 
 
-                if (!isActive) {
+  faqItems.forEach((item) => {
 
-                    item.classList.add("active");
+    const question =
+      item.querySelector(".faq-question");
 
-                    answer.style.maxHeight =
-                        answer.scrollHeight + "px";
+    const answer =
+      item.querySelector(".faq-answer");
 
-                }
 
-            }
-        );
+    question.addEventListener("click", () => {
+
+      const isActive =
+        item.classList.contains("active");
+
+
+      faqItems.forEach((otherItem) => {
+
+        otherItem.classList.remove("active");
+
+        otherItem.querySelector(
+          ".faq-answer"
+        ).style.maxHeight = null;
+
+      });
+
+
+      if (!isActive) {
+
+        item.classList.add("active");
+
+        answer.style.maxHeight =
+          answer.scrollHeight + "px";
+
+      }
 
     });
 
-
-    /* =====================================================
-       ANO AUTOMÁTICO
-       ===================================================== */
-
-    const currentYear =
-        document.getElementById("currentYear");
+  });
 
 
-    if (currentYear) {
+  /* =========================================
+     ANO AUTOMÁTICO
+  ========================================= */
 
-        currentYear.textContent =
-            new Date().getFullYear();
+  const currentYear =
+    document.getElementById("currentYear");
 
-    }
-
-
-    /* =====================================================
-       SMOOTH SCROLL
-       ===================================================== */
-
-    const internalLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
+  if (currentYear) {
+    currentYear.textContent =
+      new Date().getFullYear();
+  }
 
 
-    internalLinks.forEach(link => {
+  /* =========================================
+     SMOOTH SCROLL
+  ========================================= */
 
-        link.addEventListener(
-            "click",
-            event => {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-                const targetId =
-                    link.getAttribute("href");
+    link.addEventListener("click", (event) => {
 
+      const targetId =
+        link.getAttribute("href");
 
-                if (
-                    !targetId ||
-                    targetId === "#" ||
-                    targetId.length < 2
-                ) {
-                    return;
-                }
+      const target =
+        document.querySelector(targetId);
 
+      if (!target) return;
 
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
+      event.preventDefault();
 
-
-                if (!target) {
-                    return;
-                }
-
-
-                event.preventDefault();
-
-
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect().top +
-                    window.scrollY -
-                    headerHeight;
-
-
-                window.scrollTo({
-
-                    top: targetPosition,
-
-                    behavior: "smooth"
-
-                });
-
-            }
-        );
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
     });
 
-
-    /* =====================================================
-       PARALLAX SUTIL
-       ===================================================== */
-
-    const heroBackground =
-        document.querySelector(
-            ".hero-background"
-        );
+  });
 
 
-    if (heroBackground) {
+  /* =========================================
+     PARALLAX SUTIL NO HERO
+  ========================================= */
 
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                const scroll =
-                    window.scrollY;
+  const doctorCard =
+    document.querySelector(".doctor-card");
 
 
-                if (scroll < 800) {
+  window.addEventListener("scroll", () => {
 
-                    heroBackground.style.transform =
-                        `translateY(${scroll * 0.12}px)`;
+    if (!doctorCard) return;
 
-                }
+    if (window.innerWidth <= 950) return;
 
-            },
-            {
-                passive: true
-            }
-        );
+    const scroll =
+      window.scrollY;
+
+    if (scroll < 700) {
+
+      doctorCard.style.transform =
+        `translateY(${scroll * 0.035}px) rotate(2deg)`;
 
     }
+
+  });
 
 });
